@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AnimeWalls — Anime Wallpapers</title>
+<meta name="description" content="AnimeWalls — discover and organize beautiful anime wallpapers for mobile and desktop. Created and maintained by Ambuj Tripathi.">
+<style>
+:root{--bg:#020812;--card:#071525e8;--line:#1b5370;--cyan:#00eaff;--green:#00ff9d;--blue:#238cff;--text:#f5fbff;--muted:#9bb0c4}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:Inter,system-ui,Segoe UI,sans-serif;background:#020812;overflow-x:hidden}
+body:before,body:after{content:"";position:fixed;inset:-20%;z-index:-3;pointer-events:none;background:radial-gradient(circle at 18% 25%,#005dff 0,transparent 23%),radial-gradient(circle at 84% 28%,#00b878 0,transparent 25%),radial-gradient(circle at 50% 90%,#003c79 0,transparent 30%);animation:aurora 12s ease-in-out infinite alternate}
+body:after{z-index:-2;opacity:.45;background:repeating-linear-gradient(115deg,transparent 0 18px,#00eaff18 19px 20px,transparent 21px 60px);filter:blur(5px);animation:drift 18s linear infinite}
+@keyframes aurora{to{transform:scale(1.12) translate(2%, -2%)}}@keyframes drift{to{transform:translate(80px,-30px)}}
+.lightning{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;background:linear-gradient(113deg,transparent 0 24%,#00d9ff 24.15%,transparent 24.4% 100%),linear-gradient(67deg,transparent 0 78%,#00ff9d 78.1%,transparent 78.35%);filter:blur(1px);animation:flash 7s infinite}
+@keyframes flash{0%,88%,100%{opacity:.18}90%{opacity:.65}91%{opacity:.08}92%{opacity:.5}}
+.container{width:min(1240px,92%);margin:auto}.nav{height:70px;display:flex;align-items:center;gap:28px;border-bottom:1px solid #ffffff12}.logo{font-weight:950;font-size:22px;font-style:italic;letter-spacing:-1px}.logo b{color:var(--green)}nav{display:flex;gap:25px;color:#b8c9d8;font-size:14px}nav a:hover,nav .active{color:#fff}.topsearch{margin-left:auto;width:min(360px,32vw);background:#061321cc;border:1px solid #23536b;border-radius:30px;padding:9px 14px;color:#fff;outline:none}.iconbtn{border:1px solid #24546a;background:#071827;color:#dffaff;border-radius:50%;width:38px;height:38px}
+.hero{text-align:center;padding:65px 0 35px}.hero h1{font-size:clamp(55px,9vw,105px);margin:0;line-height:.88;letter-spacing:-6px;font-style:italic;text-shadow:0 0 28px #00eaff55}.hero h1 span{background:linear-gradient(90deg,#e8fbff,#00eaff,#00ff9d);color:transparent;background-clip:text;-webkit-background-clip:text}.tagline{letter-spacing:4px;margin:18px 0 12px;font-weight:800}.tagline em{color:var(--green);font-style:normal}.hero p{color:#a9bac8;max-width:650px;margin:0 auto 22px;line-height:1.6}.bigsearch{width:min(650px,100%);margin:auto;display:flex;background:#04111ddf;border:1px solid #00dfff;border-radius:30px;padding:6px;box-shadow:0 0 30px #00cfff25}.bigsearch input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:#fff;padding:12px 15px}.go{border:0;border-radius:24px;background:linear-gradient(90deg,#00d9ff,#00ff9d);color:#00100d;font-weight:950;padding:11px 19px}
+.stats{display:flex;justify-content:center;gap:35px;flex-wrap:wrap;margin:30px 0}.stat{display:flex;gap:10px;align-items:center}.stat .ico{font-size:23px}.stat small{display:block;color:var(--muted)}
+.section{padding:30px 0}.head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.head h2{margin:0;font-size:27px}.head a{color:#8feeff;font-size:13px}.chips{display:flex;gap:9px;overflow:auto;padding-bottom:8px}.chip{white-space:nowrap;padding:9px 15px;border-radius:20px;border:1px solid #1c4258;background:#061321;color:#a9bdcc}.chip.active,.chip:hover{border-color:#00eaff;color:#fff;background:#06334a}
+.categorygrid{display:grid;grid-template-columns:repeat(8,1fr);gap:10px}.category{height:112px;border:1px solid #20506b;border-radius:12px;display:flex;align-items:end;padding:10px;position:relative;overflow:hidden;background:linear-gradient(145deg,#13274c,#032218)}.category:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 25%,#000c)}.category span{position:relative;z-index:1;font-weight:800;font-size:13px}.c2{background:linear-gradient(145deg,#561b1b,#0c0b18)}.c3{background:linear-gradient(145deg,#32185e,#061225)}.c4{background:linear-gradient(145deg,#172e50,#071111)}.c5{background:linear-gradient(145deg,#3d3220,#0a0e13)}.c6{background:linear-gradient(145deg,#161d5b,#050914)}.c7{background:linear-gradient(145deg,#0c3c31,#07101b)}.c8{background:linear-gradient(145deg,#15244c,#2c1050)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:#06111ed9;border:1px solid #16415b;border-radius:15px;overflow:hidden;transition:.25s}.card:hover{transform:translateY(-5px);border-color:#00dfff;box-shadow:0 15px 40px #0009}.wall{height:300px;position:relative;overflow:hidden;background-size:cover;background-position:center}.wall img{width:100%;height:100%;object-fit:cover;display:block}.art1{background:radial-gradient(circle at 50% 30%,#7aeaff 0 2%,transparent 3%),linear-gradient(135deg,#061d54,#020710 48%,#004f52)}.art2{background:linear-gradient(145deg,#651b22,#070912 55%,#d07716)}.art3{background:linear-gradient(145deg,#062d55,#06101b 50%,#00a7b8)}.art4{background:linear-gradient(145deg,#30106b,#080914 55%,#d84a92)}
+.wall:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,#02050de8)}.title{position:absolute;z-index:2;left:13px;bottom:13px;font-weight:900}.heart{position:absolute;z-index:3;right:10px;top:10px;width:35px;height:35px;border-radius:50%;border:1px solid #ffffff25;background:#02060bb8;color:#fff}.heart.saved{background:#00cda0;color:#001b15}.meta{display:flex;justify-content:space-between;padding:11px 13px;color:#8da5b8;font-size:11px}
+.find{margin-top:20px;padding:20px;border:1px solid #1c5b75;border-radius:16px;background:linear-gradient(100deg,#061b2d,#041a18)}.find h3{margin:0 0 5px}.find p{color:#8fa7b9;font-size:13px;margin:0}.selects{display:grid;grid-template-columns:repeat(4,1fr) auto;gap:10px;margin-top:15px}.selects select,.upload input,.upload select{background:#03101b;color:#dcefff;border:1px solid #24506a;border-radius:9px;padding:11px;outline:none}.find button,.upload button{border:0;border-radius:10px;background:linear-gradient(90deg,#00d9ff,#00ff9d);color:#00120e;font-weight:900;padding:11px 17px}
+.upload{border:1px dashed #25708b;border-radius:18px;padding:28px;text-align:center;background:#04131fe8}.upload p{color:#8fa7b9}.uploadgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:760px;margin:18px auto 0}.uploadgrid .full{grid-column:1/-1}.file{display:none}.notice{font-size:11px;color:#71899c;margin-top:12px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:16px}.aboutbox{border:1px solid #1b4b62;background:#061321db;border-radius:16px;padding:24px}.aboutbox p{color:#93aabd;line-height:1.7}
+footer{margin-top:30px;border-top:1px solid #ffffff12;padding:28px 0;color:#72899b}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.creator strong{color:#00ffad}.modal{display:none;position:fixed;inset:0;background:#000d;z-index:50;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modalbox{width:min(900px,100%);background:#061321;border:1px solid #1c6986;border-radius:16px;overflow:hidden}.preview{height:min(70vh,650px);padding:18px}.preview img{width:100%;height:100%;object-fit:contain;background:#01050a;border-radius:10px}.modalinfo{padding:15px;display:flex;justify-content:space-between;align-items:center}.close,.download{border:0;border-radius:9px;padding:10px 15px}.close{background:#172638;color:#fff}.download{background:#00e6a0;color:#00140e;font-weight:900}
+@media(max-width:950px){.categorygrid{grid-template-columns:repeat(4,1fr)}.grid{grid-template-columns:repeat(2,1fr)}.selects{grid-template-columns:1fr 1fr}.selects button{grid-column:1/-1}.topsearch{display:none}}
+@media(max-width:560px){nav{display:none}.hero h1{letter-spacing:-4px}.hero{padding-top:45px}.categorygrid{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr 1fr;gap:9px}.wall{height:230px}.about{grid-template-columns:1fr}.uploadgrid{grid-template-columns:1fr}.uploadgrid .full{grid-column:auto}.stats{gap:16px}.selects{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="lightning"></div>
+<header><div class="container nav">
+<a class="logo" href="#home">ANIME<b>WALLS</b></a>
+<nav><a class="active" href="#home">Home</a><a href="#explore">Explore</a><a href="#categories">Categories</a><a href="#upload">Upload</a><a href="#favorites">Favorites</a><a href="#about">About</a></nav>
+<input class="topsearch" id="topSearch" placeholder="Search wallpapers, anime, characters..." aria-label="Search">
+<button class="iconbtn" id="themeBtn" title="Toggle glow">☼</button>
+</div></header>
+
+<main id="home">
+<section class="hero container">
+<h1>ANIME<span>WALLS</span></h1>
+<div class="tagline">Your Screen <em>✦</em> Your Anime <em>✦</em> Your Style</div>
+<p>Discover stunning anime-inspired wallpapers in HD & 4K style. From legendary heroes to breathtaking worlds — explore, save and download your favorites.</p>
+<div class="bigsearch"><input id="search" placeholder="Search wallpapers, anime, characters, mood..." aria-label="Search wallpapers"><button class="go" onclick="filterCards()">➜</button></div>
+<div class="stats"><div class="stat"><span class="ico">♛</span><div><b>HD & 4K</b><small>High Quality</small></div></div><div class="stat"><span class="ico">⇩</span><div><b>Free Download</b><small>No sign up</small></div></div><div class="stat"><span class="ico">⟳</span><div><b>Regular Updates</b><small>New wallpapers</small></div></div><div class="stat"><span class="ico">▣</span><div><b>Mobile & Desktop</b><small>All devices</small></div></div></div>
+</section>
+
+<section class="section container" id="categories"><div class="head"><h2>Anime Categories</h2><a href="#explore">Explore all →</a></div>
+<div class="categorygrid">
+<a class="category" href="#explore" onclick="setSearch('Naruto')"><span>Naruto</span></a><a class="category c2" href="#explore" onclick="setSearch('One Piece')"><span>One Piece</span></a><a class="category c3" href="#explore" onclick="setSearch('Demon Slayer')"><span>Demon Slayer</span></a><a class="category c4" href="#explore" onclick="setSearch('Jujutsu')"><span>Jujutsu Kaisen</span></a><a class="category c5" href="#explore" onclick="setSearch('Attack')"><span>Attack on Titan</span></a><a class="category c6" href="#explore" onclick="setSearch('Solo')"><span>Solo Leveling</span></a><a class="category c7" href="#explore" onclick="setSearch('My Hero')"><span>My Hero Academia</span></a><a class="category c8" href="#explore" onclick="setSearch('Blue Lock')"><span>Blue Lock</span></a>
+</div></section>
+
+<section class="section container" id="explore"><div class="head"><h2>🔥 Trending Wallpapers</h2><span class="muted" id="count">4 wallpapers</span></div>
+<div class="chips"><button class="chip active" data-filter="all">All</button><button class="chip" data-filter="dark">🌑 Dark</button><button class="chip" data-filter="action">⚔️ Action</button><button class="chip" data-filter="calm">🌌 Calm</button><button class="chip" data-filter="football">⚽ Football</button><button class="chip" data-filter="mobile">📱 Mobile</button><button class="chip" data-filter="desktop">💻 Desktop</button></div>
+<div class="grid" id="grid">
+<article class="card" data-tags="jujutsu dark mobile" data-name="gojo saturo jujutsu"><div class="wall art1"><button class="heart" onclick="fav(this,event)">♡</button><span class="title">Gojo Satoru</span></div><div class="meta"><span>Jujutsu Kaisen</span><span>4K • Mobile</span></div></article>
+<article class="card" data-tags="naruto action desktop" data-name="naruto uzumaki"><div class="wall art2"><button class="heart" onclick="fav(this,event)">♡</button><span class="title">Naruto Uzumaki</span></div><div class="meta"><span>Naruto</span><span>4K • Desktop</span></div></article>
+<article class="card" data-tags="demon action mobile" data-name="tanjiro kamado"><div class="wall art3"><button class="heart" onclick="fav(this,event)">♡</button><span class="title">Tanjiro Kamado</span></div><div class="meta"><span>Demon Slayer</span><span>4K • Mobile</span></div></article>
+<article class="card" data-tags="one piece action desktop" data-name="monkey d luffy"><div class="wall art4"><button class="heart" onclick="fav(this,event)">♡</button><span class="title">Monkey D. Luffy</span></div><div class="meta"><span>One Piece</span><span>HD • Desktop</span></div></article>
+</div>
+<div class="find"><h3>✦ Find Your Perfect Wallpaper</h3><p>Choose your anime, mood and device — then narrow the gallery instantly.</p><div class="selects"><select id="animeSelect"><option value="">Select Anime</option><option>Naruto</option><option>One Piece</option><option>Demon Slayer</option><option>Jujutsu</option><option>Solo Leveling</option><option>Blue Lock</option></select><select id="moodSelect"><option value="">Select Mood</option><option>Dark</option><option>Action</option><option>Calm</option><option>Football</option></select><select id="deviceSelect"><option value="">All Devices</option><option>Mobile</option><option>Desktop</option></select><button onclick="smartFind()">Find Wallpapers →</button></div></div>
+<div class="empty" id="empty" style="display:none;text-align:center;color:#8da5b8;padding:35px">No matching wallpapers yet.</div>
+</section>
+
+<section class="section container" id="upload"><div class="upload"><h2>📤 Upload Your Wallpaper</h2><p>Add an image to your local gallery. This free system works directly in your browser.</p><label class="go" for="fileInput">Choose Image</label><input class="file" id="fileInput" type="file" accept="image/png,image/jpeg,image/webp"><div id="filename" class="muted" style="margin-top:14px">No image selected</div>
+<div class="uploadgrid"><input id="wallName" placeholder="Wallpaper name"><select id="wallType"><option>Mobile</option><option>Desktop</option><option>Both</option></select><input id="wallAnime" placeholder="Anime / character"><select id="wallMood"><option>Action</option><option>Dark</option><option>Calm</option><option>Football</option></select><button class="full" onclick="addWallpaper()">Add to Gallery</button></div><div class="notice">Your uploaded file stays on this browser. For the public website, we'll later place approved image files in the site's image folder.</div></div></section>
+
+<section class="section container" id="favorites"><div class="aboutbox"><h2>❤️ Favorites</h2><p>Tap the heart on any wallpaper to mark it while browsing. Your selections can be expanded into a full favorites page later.</p></div></section>
+<section class="section container" id="about"><div class="about"><div class="aboutbox"><h2>About AnimeWalls</h2><p>A free anime wallpaper project focused on clean discovery, beautiful visuals and easy downloads.</p></div><div class="aboutbox"><h2>Created by Ambuj Tripathi</h2><p>AnimeWalls is created and maintained by <strong style="color:#00ffad">Ambuj Tripathi</strong>.</p></div></div></section>
+</main>
+
+<footer><div class="container foot"><div><b class="logo">ANIME<b>WALLS</b></b><br><small>For anime fans. By Ambuj Tripathi.</small></div><div>Home · Explore · Categories · Upload · Favorites · About</div><div class="creator">Created & maintained by <strong>Ambuj Tripathi</strong></div></div></footer>
+
+<div class="modal" id="modal" onclick="closeModal(event)"><div class="modalbox"><div class="preview"><img id="preview" alt="Wallpaper preview"></div><div class="modalinfo"><b id="previewTitle">Wallpaper</b><div><button class="close" onclick="closeModal()">Close</button> <button class="download" onclick="downloadCurrent()">Download</button></div></div></div></div>
+
+<script>
+let activeFilter="all",current=null;
+const grid=document.getElementById("grid"),search=document.getElementById("search"),topSearch=document.getElementById("topSearch");
+function setSearch(v){search.value=v;topSearch.value=v;filterCards()}
+function filterCards(){
+ const q=search.value.toLowerCase().trim();let n=0;
+ [...grid.children].forEach(c=>{const ok=(activeFilter==="all"||c.dataset.tags.includes(activeFilter))&&(!q||c.dataset.name.includes(q)||c.dataset.tags.includes(q));c.style.display=ok?"block":"none";if(ok)n++});
+ document.getElementById("count").textContent=n+" wallpaper"+(n===1?"":"s");document.getElementById("empty").style.display=n?"none":"block";
+}
+search.addEventListener("input",()=>{topSearch.value=search.value;filterCards()});
+topSearch.addEventListener("input",()=>{search.value=topSearch.value;filterCards()});
+document.querySelectorAll(".chip").forEach(x=>x.onclick=()=>{document.querySelectorAll(".chip").forEach(y=>y.classList.remove("active"));x.classList.add("active");activeFilter=x.dataset.filter;filterCards()});
+function smartFind(){let a=document.getElementById("animeSelect").value,m=document.getElementById("moodSelect").value,d=document.getElementById("deviceSelect").value;search.value=[a,m,d].filter(Boolean).join(" ");topSearch.value=search.value;activeFilter="all";document.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));document.querySelector('.chip[data-filter="all"]').classList.add("active");filterCards()}
+function fav(btn,e){e.stopPropagation();btn.classList.toggle("saved");btn.textContent=btn.classList.contains("saved")?"♥":"♡"}
+function openPreview(src,title){current={src,title};document.getElementById("preview").src=src;document.getElementById("previewTitle").textContent=title;document.getElementById("modal").classList.add("open")}
+function closeModal(e){if(!e||e.target.id==="modal"||e.target.classList.contains("close"))document.getElementById("modal").classList.remove("open")}
+function downloadCurrent(){if(!current)return;let a=document.createElement("a");a.href=current.src;a.download=current.title.replace(/[^a-z0-9]+/gi,"-").toLowerCase()+".jpg";a.click()}
+document.querySelectorAll(".wall").forEach(w=>w.addEventListener("click",e=>{if(e.target.classList.contains("heart"))return;let c=w.closest(".card");openPreview("",c.dataset.name)}));
+document.getElementById("fileInput").addEventListener("change",e=>document.getElementById("filename").textContent=e.target.files[0]?.name||"No image selected");
+const uploads=JSON.parse(localStorage.getItem("animeWallsUploads")||"[]");
+function renderUpload(x){let c=document.createElement("article");c.className="card";c.dataset.tags=(x.tags+" "+x.type).toLowerCase();c.dataset.name=(x.name+" "+x.anime).toLowerCase();c.innerHTML='<div class="wall"><img src="'+x.src+'" alt="'+x.name+'"><button class="heart" onclick="fav(this,event)">♡</button><span class="title">'+x.name.replace(/</g,"&lt;")+'</span></div><div class="meta"><span>'+x.anime.replace(/</g,"&lt;")+'</span><span>Added by Ambuj</span></div>';c.querySelector(".wall").addEventListener("click",e=>{if(e.target.classList.contains("heart"))return;openPreview(x.src,x.name)});grid.prepend(c)}
+uploads.forEach(renderUpload);
+function addWallpaper(){let f=document.getElementById("fileInput").files[0];if(!f)return alert("Choose an image first.");if(f.size>2.5*1024*1024)return alert("For this free browser version, use an image under 2.5 MB.");let r=new FileReader();r.onload=()=>{let x={src:r.result,name:document.getElementById("wallName").value||"My Wallpaper",anime:document.getElementById("wallAnime").value||"Anime",type:document.getElementById("wallType").value,tags:document.getElementById("wallMood").value};uploads.unshift(x);try{localStorage.setItem("animeWallsUploads",JSON.stringify(uploads))}catch(e){uploads.shift();return alert("Browser storage is full. Try a smaller image.")}renderUpload(x);filterCards();document.getElementById("fileInput").value="";document.getElementById("filename").textContent="No image selected";alert("Wallpaper added to your local gallery!")};r.readAsDataURL(f)}
+document.getElementById("themeBtn").onclick=()=>document.body.classList.toggle("glowOff");
+</script>
+</body>
+</html>
